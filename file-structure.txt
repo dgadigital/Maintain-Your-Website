@@ -1,0 +1,286 @@
+Folder PATH listing for volume OS
+Volume serial number is 90A7-8BF1
+C:.
+¦   .gitignore
+¦   .prettierrc
+¦   deploy.sh
+¦   file-structure.txt
+¦   footer.php
+¦   functions.php
+¦   header.php
+¦   index.php
+¦   package.json
+¦   README.md
+¦   style.css
+¦   yarn.lock
+¦   
++---src
+¦   ¦   about.html
+¦   ¦   homepage.html
+¦   ¦   index.html
+¦   ¦   Web.config
+¦   ¦   
+¦   +---assets
+¦   ¦   +---fonts
+¦   ¦   ¦       fa-brands-400.eot
+¦   ¦   ¦       fa-brands-400.svg
+¦   ¦   ¦       fa-brands-400.ttf
+¦   ¦   ¦       fa-brands-400.woff
+¦   ¦   ¦       fa-brands-400.woff2
+¦   ¦   ¦       fa-regular-400.eot
+¦   ¦   ¦       fa-regular-400.svg
+¦   ¦   ¦       fa-regular-400.ttf
+¦   ¦   ¦       fa-regular-400.woff
+¦   ¦   ¦       fa-regular-400.woff2
+¦   ¦   ¦       fa-solid-900.eot
+¦   ¦   ¦       fa-solid-900.svg
+¦   ¦   ¦       fa-solid-900.ttf
+¦   ¦   ¦       fa-solid-900.woff
+¦   ¦   ¦       fa-solid-900.woff2
+¦   ¦   ¦       Montserrat-Black.eot
+¦   ¦   ¦       Montserrat-Black.svg
+¦   ¦   ¦       Montserrat-Black.ttf
+¦   ¦   ¦       Montserrat-Black.woff
+¦   ¦   ¦       Montserrat-Black.woff2
+¦   ¦   ¦       Montserrat-Bold.eot
+¦   ¦   ¦       Montserrat-Bold.svg
+¦   ¦   ¦       Montserrat-Bold.ttf
+¦   ¦   ¦       Montserrat-Bold.woff
+¦   ¦   ¦       Montserrat-Bold.woff2
+¦   ¦   ¦       Montserrat-Medium.eot
+¦   ¦   ¦       Montserrat-Medium.svg
+¦   ¦   ¦       Montserrat-Medium.ttf
+¦   ¦   ¦       Montserrat-Medium.woff
+¦   ¦   ¦       Montserrat-Medium.woff2
+¦   ¦   ¦       Montserrat-Regular.eot
+¦   ¦   ¦       Montserrat-Regular.svg
+¦   ¦   ¦       Montserrat-Regular.ttf
+¦   ¦   ¦       Montserrat-Regular.woff
+¦   ¦   ¦       Montserrat-Regular.woff2
+¦   ¦   ¦       Montserrat-SemiBold.eot
+¦   ¦   ¦       Montserrat-SemiBold.svg
+¦   ¦   ¦       Montserrat-SemiBold.ttf
+¦   ¦   ¦       Montserrat-SemiBold.woff
+¦   ¦   ¦       Montserrat-SemiBold.woff2
+¦   ¦   ¦       opensans-regular.eot
+¦   ¦   ¦       opensans-regular.svg
+¦   ¦   ¦       opensans-regular.ttf
+¦   ¦   ¦       opensans-regular.woff
+¦   ¦   ¦       opensans-regular.woff2
+¦   ¦   ¦       Syne-Regular.eot
+¦   ¦   ¦       Syne-Regular.svg
+¦   ¦   ¦       Syne-Regular.ttf
+¦   ¦   ¦       Syne-Regular.woff
+¦   ¦   ¦       Syne-Regular.woff2
+¦   ¦   ¦       
+¦   ¦   +---images
+¦   ¦           arrow-link.png
+¦   ¦           ceo.png
+¦   ¦           client-logo1.png
+¦   ¦           client-logo2.png
+¦   ¦           col.png
+¦   ¦           drupal.png
+¦   ¦           favicon.ico
+¦   ¦           floating-small-banner.png
+¦   ¦           image1.png
+¦   ¦           image2.png
+¦   ¦           image3.png
+¦   ¦           image4.png
+¦   ¦           joomla.png
+¦   ¦           list-blue.png
+¦   ¦           list-white.png
+¦   ¦           logo-footer.png
+¦   ¦           logo.png
+¦   ¦           magento.png
+¦   ¦           quote-left.png
+¦   ¦           quote-right.png
+¦   ¦           resource.png
+¦   ¦           search-icon.png
+¦   ¦           shopify.png
+¦   ¦           silo.png
+¦   ¦           wordpress.png
+¦   ¦           
+¦   +---scripts
+¦   ¦   ¦   bootstrapper.js
+¦   ¦   ¦   non-responsive.js
+¦   ¦   ¦   
+¦   ¦   +---core
+¦   ¦   ¦       base.js
+¦   ¦   ¦       
+¦   ¦   +---modules
+¦   ¦   ¦       theme-module.js
+¦   ¦   ¦       
+¦   ¦   +---vendors
+¦   ¦           bootstrap.min.js
+¦   ¦           jquery.min.js
+¦   ¦           popper.min.js
+¦   ¦           slick.min.js
+¦   ¦           swiper.min.js
+¦   ¦           
+¦   +---styles
+¦       ¦   main.scss
+¦       ¦   
+¦       +---base
+¦       ¦       README.md
+¦       ¦       _base.scss
+¦       ¦       _fonts.scss
+¦       ¦       _helpers.scss
+¦       ¦       _typography.scss
+¦       ¦       
+¦       +---components
+¦       ¦       README.md
+¦       ¦       _buttons.scss
+¦       ¦       
+¦       +---layout
+¦       ¦       README.md
+¦       ¦       _footer.scss
+¦       ¦       _header.scss
+¦       ¦       
+¦       +---pages
+¦       ¦       README.md
+¦       ¦       _home.scss
+¦       ¦       
+¦       +---sections
+¦       ¦       _ceo-section.scss
+¦       ¦       _client-logos.scss
+¦       ¦       _column-show-more.scss
+¦       ¦       _column-with-list.scss
+¦       ¦       _contact-us.scss
+¦       ¦       _numbered-boxes.scss
+¦       ¦       _platforms-logo.scss
+¦       ¦       _resources-slider.scss
+¦       ¦       _small-banner.scss
+¦       ¦       _solution-hover-box.scss
+¦       ¦       _testimonials-section.scss
+¦       ¦       _two-columns.scss
+¦       ¦       _vertical_boxes.scss
+¦       ¦       
+¦       +---themes
+¦       ¦       README.md
+¦       ¦       _default.scss
+¦       ¦       
+¦       +---utils
+¦       ¦       README.md
+¦       ¦       _functions.scss
+¦       ¦       _mixins.scss
+¦       ¦       _variables.scss
+¦       ¦       
+¦       +---vendors
+¦           ¦   README.md
+¦           ¦   _bootstrap.scss
+¦           ¦   _font-awesome.scss
+¦           ¦   _slick.scss
+¦           ¦   _swiper.scss
+¦           ¦   
+¦           +---bootstrap
+¦           ¦   ¦   bootstrap-grid.scss
+¦           ¦   ¦   bootstrap-reboot.scss
+¦           ¦   ¦   _alert.scss
+¦           ¦   ¦   _badge.scss
+¦           ¦   ¦   _breadcrumb.scss
+¦           ¦   ¦   _button-group.scss
+¦           ¦   ¦   _buttons.scss
+¦           ¦   ¦   _card.scss
+¦           ¦   ¦   _carousel.scss
+¦           ¦   ¦   _close.scss
+¦           ¦   ¦   _code.scss
+¦           ¦   ¦   _custom-forms.scss
+¦           ¦   ¦   _dropdown.scss
+¦           ¦   ¦   _forms.scss
+¦           ¦   ¦   _functions.scss
+¦           ¦   ¦   _grid.scss
+¦           ¦   ¦   _images.scss
+¦           ¦   ¦   _input-group.scss
+¦           ¦   ¦   _jumbotron.scss
+¦           ¦   ¦   _list-group.scss
+¦           ¦   ¦   _media.scss
+¦           ¦   ¦   _mixins.scss
+¦           ¦   ¦   _modal.scss
+¦           ¦   ¦   _nav.scss
+¦           ¦   ¦   _navbar.scss
+¦           ¦   ¦   _pagination.scss
+¦           ¦   ¦   _popover.scss
+¦           ¦   ¦   _print.scss
+¦           ¦   ¦   _progress.scss
+¦           ¦   ¦   _reboot.scss
+¦           ¦   ¦   _root.scss
+¦           ¦   ¦   _tables.scss
+¦           ¦   ¦   _tooltip.scss
+¦           ¦   ¦   _transitions.scss
+¦           ¦   ¦   _type.scss
+¦           ¦   ¦   _utilities.scss
+¦           ¦   ¦   _variables.scss
+¦           ¦   ¦   
+¦           ¦   +---mixins
+¦           ¦   ¦       _alert.scss
+¦           ¦   ¦       _background-variant.scss
+¦           ¦   ¦       _badge.scss
+¦           ¦   ¦       _border-radius.scss
+¦           ¦   ¦       _box-shadow.scss
+¦           ¦   ¦       _breakpoints.scss
+¦           ¦   ¦       _buttons.scss
+¦           ¦   ¦       _caret.scss
+¦           ¦   ¦       _clearfix.scss
+¦           ¦   ¦       _float.scss
+¦           ¦   ¦       _forms.scss
+¦           ¦   ¦       _gradients.scss
+¦           ¦   ¦       _grid-framework.scss
+¦           ¦   ¦       _grid.scss
+¦           ¦   ¦       _hover.scss
+¦           ¦   ¦       _image.scss
+¦           ¦   ¦       _list-group.scss
+¦           ¦   ¦       _lists.scss
+¦           ¦   ¦       _nav-divider.scss
+¦           ¦   ¦       _navbar-align.scss
+¦           ¦   ¦       _pagination.scss
+¦           ¦   ¦       _reset-text.scss
+¦           ¦   ¦       _resize.scss
+¦           ¦   ¦       _screen-reader.scss
+¦           ¦   ¦       _size.scss
+¦           ¦   ¦       _table-row.scss
+¦           ¦   ¦       _text-emphasis.scss
+¦           ¦   ¦       _text-hide.scss
+¦           ¦   ¦       _text-truncate.scss
+¦           ¦   ¦       _transition.scss
+¦           ¦   ¦       _visibility.scss
+¦           ¦   ¦       
+¦           ¦   +---utilities
+¦           ¦           _align.scss
+¦           ¦           _background.scss
+¦           ¦           _borders.scss
+¦           ¦           _clearfix.scss
+¦           ¦           _display.scss
+¦           ¦           _embed.scss
+¦           ¦           _flex.scss
+¦           ¦           _float.scss
+¦           ¦           _position.scss
+¦           ¦           _screenreaders.scss
+¦           ¦           _sizing.scss
+¦           ¦           _spacing.scss
+¦           ¦           _text.scss
+¦           ¦           _visibility.scss
+¦           ¦           
+¦           +---font-awesome
+¦                   _animated.scss
+¦                   _bordered-pulled.scss
+¦                   _core.scss
+¦                   _fa-brands.scss
+¦                   _fa-regular.scss
+¦                   _fa-solid.scss
+¦                   _fixed-width.scss
+¦                   _icons.scss
+¦                   _larger.scss
+¦                   _list.scss
+¦                   _mixins.scss
+¦                   _rotated-flipped.scss
+¦                   _screen-reader.scss
+¦                   _stacked.scss
+¦                   _variables.scss
+¦                   
++---tasks
+        assets.js
+        build.js
+        compress.js
+        index.js
+        serve.js
+        
