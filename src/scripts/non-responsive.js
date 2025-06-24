@@ -1,4 +1,4 @@
-$(function () {
+jQuery(function ($) {
     $('.collapse').attr('class', '');
 
     for (var i = 1; i <= 12; i++) {

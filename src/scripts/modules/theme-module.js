@@ -1,3 +1,4 @@
+(function($){
 AppName.Modules.ThemeModule = (function () {
   //Dependencies
   var core = AppName.Core;
@@ -174,3 +175,6 @@ AppName.Modules.ThemeModule = (function () {
     init: init,
   };
 })();
+
+})(jQuery)
+

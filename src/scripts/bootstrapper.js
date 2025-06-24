@@ -1,3 +1,3 @@
-$(function () {
-    AppName.Modules.ThemeModule.init();
+jQuery(function ($) {
+  AppName.Modules.ThemeModule.init();
 });

@@ -100,14 +100,15 @@
   </footer>
 
   <!-- build:js scripts/main.min.js -->
-  <script src="./scripts/vendors/jquery.min.js"></script>
+  <!-- <script src="./scripts/vendors/jquery.min.js"></script>
   <script src="./scripts/vendors/popper.min.js"></script>
   <script src="./scripts/vendors/bootstrap.min.js"></script>
   <script src="./scripts/vendors/slick.min.js"></script>
   <script src="./scripts/vendors/swiper.min.js"></script>
   <script src="./scripts/core/base.js"></script>
   <script src="./scripts/modules/theme-module.js"></script>
-  <script src="./scripts/bootstrapper.js"></script>
+  <script src="./scripts/bootstrapper.js"></script> -->
+  <?php wp_footer(); ?>
   <!-- endbuild -->
 
   <!--[if lte IE 9]>

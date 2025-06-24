@@ -11,9 +11,8 @@
   <meta name="format-detection" content="telephone=no">
 
   <title>Modular Gulp Template</title>
-
-  <link rel="icon" href="./assets/images/favicon.ico">
-  <link rel="stylesheet" type="text/css" href="./styles/main.min.css">
+  <?php wp_head(); ?>
+  <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon.ico">
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
   <!--[if lte IE 9]>
     <link href="stylesheets/non-responsive.css" rel="stylesheet" />
@@ -40,9 +39,19 @@
 
   <nav class="navbar navbar-expand-xl fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">
-        <img src="./assets/images/logo.png" alt="Logo" class="img-fluid"> 
+      <a href="<?php echo esc_url(home_url('/')); ?>" class="navbar-brand">
+          <?php 
+          if (function_exists('the_custom_logo') && has_custom_logo()) {
+              $custom_logo_id = get_theme_mod('custom_logo');
+              $logo_url = wp_get_attachment_image_src($custom_logo_id, 'full');
+
+              echo '<img src="' . esc_url($logo_url[0]) . '" class="img-fluid" alt="' . get_bloginfo('name') . '">';
+          } else {
+              echo '<img src="' . get_template_directory_uri() . '/assets/images/logo.png" class="img-fluid" alt="' . get_bloginfo('name') . '">';
+          }
+          ?>
       </a>
+
       
 
       <div class="right-wrapper">

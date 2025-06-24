@@ -1,3 +1,4 @@
+<?php get_header(); ?>
 <?php
 /**
  * Template Name: Flexible Content
@@ -18,9 +19,10 @@ $section_index = 1;
             $sections = 'sections/partial';
 
             // Include the template part file
-            get_template_part($sections, $layout);
+            get_template_part($sections, $layout,['section_index' => $section_index]);
 
             $section_index++;
         }
     }
 ?>
+<?php get_footer(); ?>
