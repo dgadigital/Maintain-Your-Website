@@ -1,0 +1,153 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains CSS helper classes.
+// -----------------------------------------------------------------------------
+
+/**
+ * Hide text while making it readable for screen readers
+ * 1. Needed in WebKit-based browsers because of an implementation bug;
+ *    See: https://code.google.com/p/chromium/issues/detail?id=457146
+ */
+.hide-text {
+  overflow: hidden;
+  padding: 0;
+  /* 1 */
+  text-indent: 101%;
+  white-space: nowrap;
+}
+
+/**
+ * Hide element while making it readable for screen readers
+ * Shamelessly borrowed from HTML5Boilerplate:
+ * https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css#L119-L133
+ */
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+
+.box-style {
+  border-radius: 20px;
+  border: 1.2px solid #191A23;
+  background: var(--Grey, #F3F3F3);
+  box-shadow: 0px 5.859px 0px 0px #191A23;
+  overflow: hidden;
+}
+
+
+.form-control {
+  padding-left: 0;
+  font-size: 20px;
+  color: #7E7E7E;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 1px solid #7E7E7E;
+  border-radius: 0;
+  box-shadow: none;
+
+  @media (max-width: 991px) {
+    font-size: 18px;
+  }
+
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+textarea {
+  height: 43px;
+}
+
+.input-search-wrapper {
+    position: relative;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 19px;
+      width: 19px;
+      background-image: url(../assets/images/search-icon.png);
+    }
+}
+
+.input-search {
+  padding: 10px 40px 10px 15px;
+  border-radius: 10px;
+  border: 1px solid $brand-green;
+  font-size: 16px;
+
+
+
+  &::-webkit-input-placeholder {
+    font-family: $font-Montserrat-Bold;
+    color: $brand-green;
+    text-transform: uppercase;
+    font-size: 16px;
+  }
+  &:-moz-placeholder {
+    font-family: $font-Montserrat-Bold;
+    color: $brand-green;
+    text-transform: uppercase;
+    font-size: 16px;
+  }
+  &::-moz-placeholder {
+    font-family: $font-Montserrat-Bold;
+    color: $brand-green;
+    text-transform: uppercase;
+    font-size: 16px;
+  }
+  &:-ms-input-placeholder {
+    font-family: $font-Montserrat-Bold;
+    color: $brand-green;
+    text-transform: uppercase;
+    font-size: 16px;
+  }
+}
+
+// Styling the default Slick dots
+
+.slick-dots {
+	display: flex;
+	justify-content: center;
+  margin: 0 auto !important;
+	
+	margin: 0;
+	padding: 1rem 0;
+	
+	list-style-type: none;
+	
+		li {
+			margin: 0 0.25rem;
+		}
+	
+		button {
+			display: block;
+			width: 1rem;
+			height: 1rem;
+			padding: 0;
+			
+			border: none;
+			border-radius: 100%;
+			background-color: $dark-grey;
+			
+			text-indent: -9999px;
+		}
+	
+		li.slick-active button {
+			background-color: $mid-grey;
+		}
+	
+}

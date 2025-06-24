@@ -1,0 +1,148 @@
+.testimonials-section {
+    .testimonials-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 23px;
+        
+        .item {
+            display: flex;
+            justify-content: space-between;
+            padding: 40px 60px 50px 60px;
+            width: calc(50% - 11.5px);
+            border-radius: 20px;
+            background: #262F34;
+            overflow: hidden;
+
+            @media (max-width: 1199px) {
+                flex-wrap: wrap;
+                position: relative;
+            }
+
+            @media (max-width: 991px) {
+                width: 100%;
+                padding: 40px 35px 50px 35px;
+            }
+
+
+            &.reverse {
+                flex-direction: row-reverse;
+
+                .info {
+                    width: 45%;
+                }
+                
+                .details {
+                    padding-right: 50px;
+                    width: 55%;
+
+                    @media (max-width: 991px) {
+                        padding-right: 0;
+                    }
+                }
+            }
+        }
+    
+        .info {
+            position: relative;
+            width: 55%;
+
+            @media (max-width: 1199px) {
+                width: 100% !important;
+                position: unset;
+                padding-bottom: 30px;
+            }
+
+            .name {
+                font-size: 20px;
+                text-transform: uppercase;
+                font-family: $font-Montserrat-Bold;
+                color: #fff;
+
+                @media (max-width: 991px) {
+                    font-size: 18px;
+                }
+            }
+    
+            .position {
+                font-size: 20px;
+                color: #fff;
+                text-transform: uppercase;
+
+                @media (max-width: 991px) {
+                    font-size: 18px;
+                }
+            }
+    
+            .company {
+                font-size: 20px;
+                color: #fff;
+                text-transform: uppercase;
+
+                @media (max-width: 991px) {
+                    font-size: 18px;
+                }
+            }
+
+            .number {
+               position: absolute;
+                line-height: normal;
+                bottom: -180px;
+                left: -50px;
+                // font-size: 27.4vw;
+                font-size: 350.806px;
+
+                font-family: $font-Syne-Regular;
+                background: linear-gradient(183deg, #0147FF 35.74%, rgba(1, 71, 255, 0.00) 82.34%);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                z-index: -0;
+
+                @media (max-width: 1440px) {
+                    bottom: -168px;
+                    left: -48px;
+                    font-size: 315.806px;
+                }
+
+                @media (max-width: 1199px) {
+                    left: unset;
+                    bottom: -50px;
+                    right: 0;
+                    font-size: 140px;
+                }
+            }
+        }
+    
+        .details {
+            width: 45%;
+            z-index: 1;
+
+            @media (max-width: 1199px) {
+                width: 100% !important;
+            }
+
+            p {
+                font-size: 20px;
+                color: #fff;
+
+                @media (max-width: 991px) {
+                    font-size: 18px;
+                }
+            }
+    
+            .readmore-testimonials {
+                display: block;
+                padding-top: 30px;
+                font-size: 20px;
+                text-transform: uppercase;
+                font-family: $font-Montserrat-Bold;
+                color: #fff;
+                text-decoration: underline;
+
+                @media (max-width: 991px) {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}

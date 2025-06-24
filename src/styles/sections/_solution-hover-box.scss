@@ -1,0 +1,59 @@
+.solution-hover-box {
+
+    .box-wrapper {
+        display: flex;
+        justify-content: center;
+        gap: 45px;
+
+        @media (max-width: 1199px) {
+            flex-wrap: wrap;
+        }
+    }
+
+    .item {
+        width: 33.33%;
+
+        @media (max-width: 991px) {
+            width: 100%;
+        }
+    }
+
+    .image {
+        position: relative;
+        padding-bottom: 48%;
+    }
+
+    .title {
+        padding: 33px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $text-color;
+        font-family: $font-Montserrat-Medium;
+
+        &:hover {
+            color: #fff;
+            text-decoration: none;
+            font-family: $font-Montserrat-Bold;
+            background-color: $brand-green;
+
+
+            svg {
+                margin-left: 20px;
+                transition: all 0.2s;
+
+                path {
+                    fill: #fff;
+                }
+            }
+        }
+
+        svg {
+            margin-left: 15px;
+
+            path {
+                fill: $brand-green;
+            }
+        }
+    }
+}

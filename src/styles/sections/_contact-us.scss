@@ -1,0 +1,125 @@
+.contact-us {
+    background-color: $brand-background;
+    .content-row {
+        display: flex;
+
+        @media (max-width: 1199px) {
+            flex-wrap: wrap;
+        }
+    }
+
+    .content {
+        width: 57%;
+        padding-right: 30px;
+
+        @media (max-width: 1199px) {
+            width: 100%;
+            padding-right: 0;
+        }
+
+        h2 {
+            padding-bottom: 22px;
+            max-width: 500px;
+            text-transform: capitalize;
+        }
+
+        p {
+            max-width: 600px;
+        }
+    }
+
+    .form {
+        width: 43%;
+        padding: 60px 60px 70px 60px;
+        border-radius: 20px;
+        background: #FFF;
+
+        @media (max-width: 1199px) {
+            width: 100%;
+            padding: 25px 25px 30px 25px;
+        }
+    }
+
+    .details {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding-top: 100px;
+
+        @media (max-width: 991px) {
+            grid-template-columns: repeat(1, 1fr);
+            padding-top: 30px;
+        }
+
+        .item {
+            padding-bottom: 30px;
+
+            @media (max-width: 991px) {
+                padding-bottom: 0;
+            }
+
+            &:last-child {
+                @media (max-width: 991px) {
+                    padding-bottom: 30px;
+                }
+            }
+
+            .title {
+                margin-bottom: 12px;
+                font-size: 25px;
+                font-family: $font-Montserrat-Bold;
+            }
+
+            a {
+                color: $text-color;
+            }
+
+            .socials {
+                display: flex;
+
+                a {
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+
+    .form-wrapper {
+        .title {
+            margin-bottom: 10px;
+            font-family: $font-Montserrat-Bold;
+            text-transform: uppercase;
+            font-size: 40px;
+
+            @media (max-width: 991px) {
+                font-size: 26px;
+            }
+        }
+
+        p {
+            margin-bottom: 25px;
+        }
+    }
+
+    .map-section {
+        position: relative;
+        padding-bottom: 34%;
+        margin-top: 65px;
+        border-radius: 20px;
+        border: 10px solid #262F34;
+        overflow: hidden;
+
+        @media (max-width: 991px) {
+            padding-bottom: 65%;
+        }
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+}

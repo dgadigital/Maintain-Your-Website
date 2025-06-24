@@ -1,0 +1,61 @@
+//main: ../main.scss
+
+/**
+ * Basic typography style for copy text
+ */
+body {
+  color: $text-color;
+  font: normal 20px / 1.4 $text-font-stack;
+
+  @media (max-width: 991px) {
+    font: normal 18px / 1.4 $text-font-stack;
+  }
+}
+
+h1 {
+  font-size: 60px;
+  font-family: $font-Montserrat-Medium;
+
+  span {
+    font-family: $font-Montserrat-Bold;
+
+    &.brand-color {
+      color: $brand-color;
+    }
+  }
+}
+
+h2 {
+  font-size: 40px;
+
+  span {
+    font-family: $font-Montserrat-Bold;
+    
+    &.brand-color {
+      color: $brand-color;
+    }
+  }
+
+  @media (max-width: 991px) {
+    font-size: 35px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 26px;
+  }
+}
+
+.ticker {
+  padding-bottom: 16px;
+  font-size: 20px;
+  font-family: $font-Montserrat-Medium;
+  text-transform: uppercase;
+
+  @media (max-width: 991px) {
+    font-size: 18px;
+  }
+
+  span {
+    font-family: $font-Montserrat-Bold;
+  }
+}

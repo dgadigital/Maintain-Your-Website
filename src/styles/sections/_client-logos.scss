@@ -1,0 +1,33 @@
+.client-logos {
+    padding: 50px 0;
+    
+    .logo-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 5px;
+        padding-top: 15px;
+
+        @media (max-width: 767px) {
+            gap: 0;
+        }
+
+        .item {
+            padding: 10px 10px;
+
+            @media (max-width: 767px) {
+                text-align: center;
+                width: 50%;
+            }
+
+            &:first-child {
+                padding: 10px 10px 10px 0;
+            }
+
+            &:last-child {
+                padding: 10px 0 10px 10px;
+            }
+        }
+    }
+}

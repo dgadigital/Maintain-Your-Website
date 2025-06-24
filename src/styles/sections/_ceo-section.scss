@@ -1,0 +1,175 @@
+.meet-the-team {
+    h2 {
+        font-family: $font-Montserrat-Medium;
+        text-transform: uppercase;
+    }
+
+    .ceo-section {
+
+        .content-row {
+            display: flex;
+
+            @media (max-width: 991px) {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
+        .image {
+            width: 344px;
+            max-width: 100%;
+
+            @media (max-width: 991px) {
+                padding-bottom: 60px;
+            }
+        }
+
+        .content {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            padding-left: 60px;
+
+            @media (max-width: 991px) {
+                padding-left: 0;
+                text-align: center;
+            }
+
+            h2 {
+                padding-bottom: 35px;
+            }
+
+            .text {
+                padding-bottom: 30px;
+            }
+
+            .details {
+                .name {
+                    font-family: $font-Montserrat-Bold;
+                }
+            }
+        }
+    }
+
+    .team-section {
+        display: flex;
+        padding-top: 100px;
+
+        @media (max-width: 1199px) {
+            flex-direction: column;
+        }
+
+        .text {
+            width: 25%;
+            padding-right: 55px;
+
+            @media (max-width: 1199px) {
+               display: flex;
+               width: 100%;
+               padding-right: 0;
+            }
+
+            @media (max-width: 767px) {
+               flex-wrap: wrap;
+            }
+
+            .meet {
+                padding-bottom: 30px;
+
+                @media (max-width: 1199px) {
+                    width: 50%;
+                }
+
+                @media (max-width: 767px) {
+                    width: 100%;
+                    text-align: center;
+                }
+
+                &:last-child {
+                     padding-bottom: 0;
+                     
+                     @media (max-width: 1199px) {
+                        padding-left: 20px;
+                    }
+
+                    @media (max-width: 767px) {
+                       padding-left: 0;
+                       padding-bottom: 30px;
+                    }
+                }
+            }
+        }
+
+        .team-images {
+            width: 75%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px; 
+
+            @media (max-width: 1199px) {
+                width: 100%;
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            @media (max-width: 767px) {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .item {
+                position: relative;
+                padding-bottom: 130%;
+
+                &:hover {
+                    .content-wrapper {
+                        display: flex;
+                    }
+                }
+
+                .content-wrapper {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    display: none;
+
+                    padding: 45px 40px;
+                    background-color: #F3F3F3;
+
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    @media (max-width: 991px) {
+                        padding: 25px 20px;
+                    }
+
+                    p {
+                        font-size: 18px;
+
+                        @media (max-width: 991px) {
+                           font-size: 16px;
+                        }
+                    }
+
+                    .team-name {
+                        font-family: $font-Montserrat-Bold;
+                        font-size: 18px;
+
+                        @media (max-width: 991px) {
+                           font-size: 16px;
+                        }
+                    }
+
+                    .team-position {
+                        font-size: 18px;
+
+                        @media (max-width: 991px) {
+                           font-size: 16px;
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+}

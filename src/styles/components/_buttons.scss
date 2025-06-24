@@ -1,0 +1,66 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+
+
+.btn-solid {
+    padding: 10px 46px;
+    font-size: 20px;
+    color: #fff;
+    font-family: $font-Montserrat-SemiBold;
+    white-space: pre-wrap;
+    border-radius: 10px;
+    background: $brand-green;
+    text-transform: uppercase;
+
+    @media (max-width: 767px) {
+        font-size: 18px;
+    }
+
+    &:hover {
+        color: #fff;
+        background-color: $brand-green-hover;
+    }
+
+    &.round {
+        border-radius: 50px;
+        font-family: $font-Montserrat-Regular;
+    }
+}
+
+.link-arrow {
+    position: relative;
+    padding-right: 20px;
+    font-family: $font-Montserrat-SemiBold;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
+    color: $text-color;
+
+    @media (max-width: 767px) {
+        font-size: 18px;
+    }
+
+    &:hover {
+        color: $brand-green;
+        padding-right: 25px; 
+        transition: all 0.2s;
+    }
+
+    &:after {
+        content: url(../assets/images/arrow-link.png);
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 24px;
+        width: 12px;
+    }
+}
