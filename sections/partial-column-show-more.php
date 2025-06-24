@@ -1,46 +1,77 @@
-    <section class="column-show-more">
-      <div class="container">
-        <div class="text-center pb-5">
-          <div class="ticker">
-            why website maintenance matters for marketing teams
-          </div>
-          <h2>We maintain. You market. <span>That’s the partnership</span></h2>
-        </div>
+<?php
+// Ensure this file is not accessed directly
+if (!defined('ABSPATH')) exit;
+$section_index = $args['section_index'] ?? 0;
+$ticker = get_sub_field('ticker');
+$title = get_sub_field('title');
+$content = get_sub_field('content');
+$image = get_sub_field('image');
+$quote_text = get_sub_field('quote_text');
+$quote_left_image = get_sub_field('quote_left_image');
+$quote_right_image = get_sub_field('quote_right_image');
 
-        <div class="content-row">
-          <div class="text">
+// Do not render the section if there's nothing to show
+if (
+    empty($ticker) &&
+    empty($title) &&
+    empty($content) &&
+    empty($image) &&
+    empty($quote_text)
+) {
+    return;
+}
+?>
 
+<section id="section-<?php echo esc_attr($section_index); ?>" class="column-show-more">  
+  <div class="container">
+    <?php if (!empty($ticker) || !empty($title)): ?>  
+      <div class="text-center pb-5">
+        <?php if ($ticker): ?>
+          <div class="ticker"><?php echo esc_html($ticker); ?></div>
+        <?php endif; ?>
+        <?php if ($title): ?>
+          <h2><?php echo wp_kses_post($title); ?></h2>
+        <?php endif; ?>
+      </div>
+    <?php endif; ?>
+    <?php if (!empty($content) || !empty($image) || !empty($quote_text)): ?>      
+      <div class="content-row">
+        <div class="text">
+          <?php if ($content): ?>
             <div class="content">
               <div class="text-wrapper">
-                <p>As a marketing team, you’re under pressure to launch campaigns, build funnels, and deliver ROI. But a slow, outdated, or broken website can destroy conversion rates and waste ad spend. You need a website that’s optimized, secure, and ready for anything—without getting buried in backend tasks.</p>
-                <p>At Maintain Your Website (MYW), we work with marketing teams that don’t have dedicated tech support—or simply don’t want to be held back by the backend.</p>
-                <p>We take care of your marketing site’s performance and stability. From speed optimization and uptime monitoring to instant design updates, we act as your tech partner—so your team can focus on strategy and growth.</p>
-                <p>We understand the urgency of campaign timelines and the importance of smooth UX. We keep your website running at its best—fast, optimized, secure—so your team can focus on results, not tech headaches.</p>
-                <p>With MYW, your digital campaigns will never be disrupted by downtime, outdated plugins, or broken user flows again.</p>
+                <?php echo wp_kses_post($content); ?>
                 <div class="shadow"></div>
               </div>
               <div class="text-center">
-                <div class="showmore">
-                  SHOw MORe +
-                </div>
+                <div class="showmore">Show More +</div>
               </div>
             </div>
-
-          </div>
-          <div class="image">
-            <div class="image-wrapper">
-              <img src="./assets/images/col.png" class="img-fluid">
-            </div>
-
-            <div class="quote">
-              <span>
-                 <img src="./assets/images/quote-left.png" class="quote-left">
-                 Marketing works best on a <strong>solid foundation</strong>
-                 <img src="./assets/images/quote-right.png" class="quote-right">
-              </span>
-            </div>
-          </div>
+          <?php endif; ?>
         </div>
 
+        <div class="image">
+          <?php if ($image): ?>
+            <div class="image-wrapper">
+              <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="img-fluid">
+            </div>
+          <?php endif; ?>
+
+          <?php if ($quote_text): ?>
+            <div class="quote">
+              <span>
+                <?php if ($quote_left_image): ?>
+                  <img src="<?php echo esc_url($quote_left_image['url']); ?>" alt="Quote Left" class="quote-left">
+                <?php endif; ?>
+                <?php echo wp_kses_post($quote_text); ?>
+                <?php if ($quote_right_image): ?>
+                  <img src="<?php echo esc_url($quote_right_image['url']); ?>" alt="Quote Right" class="quote-right">
+                <?php endif; ?>
+              </span>
+            </div>
+          <?php endif; ?>
+        </div>
       </div>
-    </section>
+    <?php endif; ?>
+  </div>
+</section>
