@@ -1,12 +1,12 @@
 <?php
 $section_index = $args['section_index'] ?? 0;
-$section_id = get_sub_field('id'); // string
-$ticker = get_sub_field('ticker'); // string
-$title = get_sub_field('title'); // string
-$description = get_sub_field('description'); // string
-$button = get_sub_field('button'); // link (array)
-$list_title = get_sub_field('list_title'); // string
-$list_items = get_sub_field('list_items'); // repeater
+$section_id = get_sub_field('id'); // text
+$ticker = get_sub_field('ticker'); // text
+$title = get_sub_field('title'); // text
+$description = get_sub_field('description'); // wysiwyg
+$button = get_sub_field('button'); // link
+$list_title = get_sub_field('list_title'); // text
+$list_items = get_sub_field('list_items'); // repeater (image,text,textarea)
 
 // Return early if nothing to show
 if (empty($ticker) && empty($title) && empty($description) && empty($list_items)) return;

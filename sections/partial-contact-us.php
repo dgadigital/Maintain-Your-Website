@@ -1,7 +1,7 @@
     <?php
 if (!defined('ABSPATH')) exit;
 
-// ACF Fields
+
 $id = get_sub_field('id'); // Text
 $title = get_sub_field('title'); // Text
 $subtitle = get_sub_field('subtitle'); // Text
@@ -10,8 +10,8 @@ $contact_email = get_sub_field('contact_email'); // Text
 $contact_address = get_sub_field('contact_address'); // Textarea
 $social_links = get_sub_field('social_links'); // Repeater
 $form_title = get_sub_field('form_title'); // Text
-$form_description = get_sub_field('form_description'); // Text
-$form_shortcode = get_sub_field('form_shortcode'); // WYSIWYG
+$form_description = get_sub_field('form_description'); // WYSIWYG
+$form_shortcode = get_sub_field('form_shortcode'); // Text
 $map_embed = get_sub_field('map_embed'); // WYSIWYG
 
 if (
@@ -65,7 +65,7 @@ if (
               <div class="socials">
                 <?php foreach ($social_links as $social): ?>
                   <?php
-                  $url = $social['url']; // Text
+                  $url = $social['url']; // Url
                   $icon_svg = $social['icon']; // SVG as WYSIWYG
                   ?>
                   <?php if ($url && $icon_svg): ?>

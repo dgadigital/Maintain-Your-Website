@@ -1,7 +1,7 @@
 <?php
 if (!defined('ABSPATH')) exit;
 
-// Section index
+
 $section_index = $args['section_index'] ?? 0;
 
 // ACF fields

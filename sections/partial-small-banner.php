@@ -1,11 +1,11 @@
 <?php
-$section_id = get_sub_field('id'); // Text
 $section_index = $args['section_index'] ?? 0;
+$section_id = get_sub_field('id'); // Text
 $ticker = get_sub_field('ticker'); // Text
-$title = get_sub_field('title'); // Text or WYSIWYG
-$button = get_sub_field('button'); // Link (array: title, url, target)
-$image = get_sub_field('image'); // Image (ID)
-$floating_image = get_sub_field('floating_image'); // Image (ID)
+$title = get_sub_field('title'); // Text
+$button = get_sub_field('button'); // Link
+$image = get_sub_field('image'); // Image
+$floating_image = get_sub_field('floating_image'); // Image
 
 // Return early if nothing to show
 if (empty($ticker) && empty($title) && empty($button) && empty($image) && empty($floating_image)) return;

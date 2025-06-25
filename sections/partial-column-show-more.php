@@ -1,11 +1,11 @@
 <?php
-// Ensure this file is not accessed directly
+
 if (!defined('ABSPATH')) exit;
 $section_index = $args['section_index'] ?? 0;
-$id = get_sub_field('id');
-$ticker = get_sub_field('ticker');
-$title = get_sub_field('title');
-$content = get_sub_field('content');
+$id = get_sub_field('id'); //Text
+$ticker = get_sub_field('ticker'); //Text
+$title = get_sub_field('title'); //Text
+$content = get_sub_field('content'); //wysiwyg
 $image = get_sub_field('image');
 $quote_text = get_sub_field('quote_text');
 $quote_left_image = get_sub_field('quote_left_image');
