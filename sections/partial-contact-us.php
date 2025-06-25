@@ -1,61 +1,99 @@
-    <section class="contact-us">
-      <div class="container">
-        <div class="content-row">
-          <div class="content">
-            <h2><span>We’re here to connect and Help you</span></h2>
-            <p>Have questions about web maintenance? Need help with your website? Our team is ready to assist you.</p>
+    <?php
+if (!defined('ABSPATH')) exit;
 
-            <div class="details">
-              <div class="item">
-                <div class="title">Contact Us</div>
-                <p><a href="tel:1300 356 204">1300 356 204</a></p>
-              </div>
-              <div class="item">
-                <div class="title">Event Location</div>
-                <p>Level 5, 20 Bond Street<br>Sydney NSW, 2000</p>
-              </div>
-              <div class="item">
-                <div class="title">Email</div>
-                <p><a href="mailto:info@maintainyourwebsite.com.au">info@maintainyourwebsite.com.au</a></p>
-              </div>
-              <div class="item">
-                <div class="title">Follow Us</div>
-                <div class="socials">
-                  <a href="#">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="23" height="22" viewBox="0 0 23 22" fill="none">
-                      <path d="M22.4359 10.9908C22.4359 4.92041 17.414 0 11.2179 0C5.0219 0 0 4.92041 0 10.9908C0 16.4778 4.10128 21.0246 9.46496 21.849V14.1684H6.61709V10.9901H9.46496V8.5692C9.46496 5.81476 11.1394 4.29261 13.7024 4.29261C14.9288 4.29261 16.2137 4.50746 16.2137 4.50746V7.21237H14.798C13.4047 7.21237 12.9709 8.06011 12.9709 8.92971V10.9908H16.0821L15.5847 14.1677H12.9709V21.849C18.3346 21.0246 22.4359 16.4778 22.4359 10.9908Z" fill="black"/>
-                    </svg>
-                  </a>
-                  <a href="#">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="21" viewBox="0 0 22 21" fill="none">
-                      <path d="M21.0785 2.35205V19.4971C21.0785 19.8891 20.9186 20.2651 20.634 20.5422C20.3494 20.8194 19.9633 20.9751 19.5608 20.9751H1.95522C1.5527 20.9751 1.16666 20.8194 0.882031 20.5422C0.597402 20.2651 0.4375 19.8891 0.4375 19.4971L0.4375 2.35205C0.4375 1.96005 0.597402 1.58411 0.882031 1.30693C1.16666 1.02974 1.5527 0.874023 1.95522 0.874023L19.5608 0.874023C19.9633 0.874023 20.3494 1.02974 20.634 1.30693C20.9186 1.58411 21.0785 1.96005 21.0785 2.35205ZM6.50839 8.55975H3.47294V18.0191H6.50839V8.55975ZM6.78158 5.30809C6.78318 5.08449 6.73954 4.86278 6.65315 4.6556C6.56676 4.44842 6.43931 4.25985 6.27808 4.10064C6.11685 3.94143 5.925 3.81471 5.71348 3.72771C5.50196 3.64071 5.27491 3.59513 5.04531 3.59359H4.99067C4.52374 3.59359 4.07593 3.77422 3.74576 4.09576C3.4156 4.41729 3.23011 4.85338 3.23011 5.30809C3.23011 5.76281 3.4156 6.1989 3.74576 6.52043C4.07593 6.84197 4.52374 7.0226 4.99067 7.0226C5.22029 7.0281 5.44878 6.98949 5.66307 6.90897C5.87736 6.82844 6.07326 6.70759 6.23958 6.55331C6.40589 6.39903 6.53936 6.21435 6.63236 6.00982C6.72536 5.80529 6.77607 5.58492 6.78158 5.3613V5.30809ZM18.0431 12.2725C18.0431 9.42883 16.1854 8.32326 14.3398 8.32326C13.7356 8.2938 13.1339 8.41914 12.5949 8.68678C12.0559 8.95442 11.5984 9.355 11.268 9.84858H11.183V8.55975H8.32966V18.0191H11.3651V12.9879C11.3212 12.4726 11.4879 11.9613 11.8289 11.565C12.1699 11.1687 12.6577 10.9194 13.1864 10.8714H13.3017C14.267 10.8714 14.9834 11.4626 14.9834 12.9524V18.0191H18.0188L18.0431 12.2725Z" fill="black"/>
-                    </svg>
-                  </a>
-                  <a href="#">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M6.64762 6.86755C7.64245 5.94086 8.99173 5.42025 10.3986 5.42025C11.8055 5.42025 13.1548 5.94086 14.1497 6.86755C15.1445 7.79424 15.7034 9.0511 15.7034 10.3616C15.7034 11.6722 15.1445 12.929 14.1497 13.8557C13.1548 14.7824 11.8055 15.303 10.3986 15.303C8.99173 15.303 7.64245 14.7824 6.64762 13.8557C5.65279 12.929 5.09389 11.6722 5.09389 10.3616C5.09389 9.0511 5.65279 7.79424 6.64762 6.86755ZM9.08082 13.3252C9.49862 13.4864 9.94642 13.5694 10.3986 13.5694C11.3119 13.5694 12.1878 13.2314 12.8336 12.6298C13.4794 12.0283 13.8422 11.2124 13.8422 10.3616C13.8422 9.51089 13.4794 8.69499 12.8336 8.09342C12.1878 7.49186 11.3119 7.1539 10.3986 7.1539C9.94642 7.1539 9.49862 7.23687 9.08082 7.39807C8.66303 7.55928 8.28341 7.79556 7.96364 8.09342C7.64387 8.39129 7.39021 8.7449 7.21716 9.13408C7.0441 9.52326 6.95503 9.94039 6.95503 10.3616C6.95503 10.7829 7.0441 11.2 7.21716 11.5892C7.39021 11.9784 7.64387 12.332 7.96364 12.6298C8.28341 12.9277 8.66303 13.164 9.08082 13.3252Z" fill="black"/>
-                      <path d="M16.8794 6.15646C17.1145 5.93741 17.2466 5.64031 17.2466 5.33052C17.2466 5.02074 17.1145 4.72364 16.8794 4.50459C16.6442 4.28554 16.3253 4.16247 15.9927 4.16247C15.6601 4.16247 15.3412 4.28554 15.106 4.50459C14.8709 4.72364 14.7388 5.02074 14.7388 5.33052C14.7388 5.64031 14.8709 5.93741 15.106 6.15646C15.3412 6.37551 15.6601 6.49857 15.9927 6.49857C16.3253 6.49857 16.6442 6.37551 16.8794 6.15646Z" fill="black"/>
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M6.14383 0.805728C7.24469 0.758942 7.59559 0.748047 10.3986 0.748047C13.2024 0.748047 13.5526 0.759583 14.6528 0.805728C15.7515 0.852514 16.5029 1.01595 17.1593 1.25244C17.8476 1.49397 18.4713 1.87234 18.9867 2.36121C19.5117 2.84145 19.9179 3.42259 20.177 4.06409C20.4322 4.67552 20.607 5.37474 20.6572 6.39827C20.7075 7.42372 20.7192 7.75058 20.7192 10.3616C20.7192 12.9727 20.7075 13.2995 20.6572 14.325C20.607 15.3485 20.4322 16.0477 20.1777 16.6592C19.9184 17.3004 19.5122 17.8813 18.9874 18.3614C18.4713 18.8511 17.8473 19.2292 17.1593 19.4702C16.5029 19.708 15.7522 19.8707 14.6534 19.9175C13.5526 19.9643 13.2017 19.9752 10.3986 19.9752C7.59559 19.9752 7.24469 19.9643 6.14383 19.9175C5.04504 19.8707 4.2944 19.708 3.63801 19.4708C2.94964 19.2293 2.32604 18.8509 1.81059 18.3621C1.28494 17.8814 0.878997 17.3001 0.620296 16.6592C0.365035 16.0477 0.190275 15.3485 0.140048 14.325C0.0898216 13.2995 0.078125 12.9733 0.078125 10.3616C0.078125 7.74994 0.0905095 7.42372 0.140048 6.39891C0.190275 5.37538 0.365723 4.67552 0.619608 4.06409C0.878899 3.42286 1.28509 2.84197 1.80991 2.36185C2.32593 1.8722 2.94998 1.49406 3.63801 1.25308C4.2944 1.0153 5.04504 0.852514 6.14383 0.805728ZM14.5695 2.53617C13.481 2.49003 13.1542 2.48041 10.3986 2.48041C7.64306 2.48041 7.31624 2.49003 6.22778 2.53617C5.22187 2.57911 4.67557 2.73549 4.3116 2.86752C3.86328 3.02132 3.45771 3.26683 3.12474 3.58598C2.76421 3.92245 2.53991 4.2429 2.35345 4.69154C2.21103 5.03058 2.04384 5.53946 1.99774 6.47646C1.9482 7.49037 1.93788 7.7948 1.93788 10.3616C1.93788 12.9285 1.9482 13.2329 1.99774 14.2468C2.04384 15.1838 2.21172 15.6927 2.35345 16.0317C2.51867 16.4493 2.78222 16.8271 3.12474 17.1373C3.45775 17.4564 3.86331 17.7019 4.3116 17.8557C4.67557 17.9884 5.22187 18.1441 6.22778 18.1871C7.31624 18.2332 7.64237 18.2428 10.3986 18.2428C13.1549 18.2428 13.481 18.2332 14.5695 18.1871C15.5754 18.1441 16.1217 17.9878 16.4857 17.8557C16.934 17.702 17.3396 17.4564 17.6725 17.1373C18.0151 16.8271 18.2786 16.4493 18.4438 16.0317C18.5862 15.6927 18.7534 15.1838 18.7995 14.2468C18.8491 13.2329 18.8594 12.9285 18.8594 10.3616C18.8594 7.7948 18.8491 7.49037 18.7995 6.47646C18.7534 5.53946 18.5856 5.03058 18.4438 4.69154C18.2574 4.2429 18.0338 3.92245 17.6725 3.58598C17.3113 3.25014 16.9673 3.04121 16.4857 2.86752C16.1217 2.73485 15.5754 2.57911 14.5695 2.53617Z" fill="black"/>
-                    </svg>
-                  </a>
-                  <a href="#">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16" fill="none">
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M20.6778 0.944834C21.6426 1.18973 22.4058 1.91084 22.665 2.82241C23.1402 4.4823 23.1546 7.92452 23.1546 7.92452C23.1546 7.92452 23.1546 11.3804 22.6794 13.0266C22.4202 13.9382 21.657 14.6593 20.6922 14.9042C18.9497 15.3532 11.9367 15.3532 11.9367 15.3532C11.9367 15.3532 4.92368 15.3532 3.18123 14.9042C2.2164 14.6593 1.45317 13.9382 1.19397 13.0266C0.71875 11.3668 0.71875 7.92452 0.71875 7.92452C0.71875 7.92452 0.71875 4.4823 1.17956 2.83602C1.43877 1.92444 2.202 1.20334 3.16683 0.958444C4.90928 0.509452 11.9223 0.49585 11.9223 0.49585C11.9223 0.49585 18.9353 0.49585 20.6778 0.944834ZM15.508 7.92453L9.69023 11.1082V4.74081L15.508 7.92453Z" fill="black"/>
-                    </svg>
-                  </a>
-                </div>
+// ACF Fields
+$id = get_sub_field('id'); // Text
+$title = get_sub_field('title'); // Text
+$subtitle = get_sub_field('subtitle'); // Text
+$contact_phone = get_sub_field('contact_phone'); // Text
+$contact_email = get_sub_field('contact_email'); // Text
+$contact_address = get_sub_field('contact_address'); // Textarea
+$social_links = get_sub_field('social_links'); // Repeater
+$form_title = get_sub_field('form_title'); // Text
+$form_description = get_sub_field('form_description'); // Text
+$form_shortcode = get_sub_field('form_shortcode'); // WYSIWYG
+$map_embed = get_sub_field('map_embed'); // WYSIWYG
+
+if (
+  empty($title) &&
+  empty($subtitle) &&
+  empty($contact_phone) &&
+  empty($contact_email) &&
+  empty($contact_address) &&
+  empty($form_shortcode) &&
+  empty($map_embed)
+) return;
+?>
+
+<section class="contact-us" id="<?php echo esc_attr($id); ?>">
+  <div class="container">
+    <div class="content-row">
+      <div class="content">
+        <?php if ($title): ?>
+          <h2><span><?php echo esc_html($title); ?></span></h2>
+        <?php endif; ?>
+
+        <?php if ($subtitle): ?>
+          <p><?php echo esc_html($subtitle); ?></p>
+        <?php endif; ?>
+
+        <div class="details">
+          <?php if ($contact_phone): ?>
+            <div class="item">
+              <div class="title">Contact Us</div>
+              <p><a href="tel:<?php echo esc_attr($contact_phone); ?>"><?php echo esc_html($contact_phone); ?></a></p>
+            </div>
+          <?php endif; ?>
+
+          <?php if ($contact_address): ?>
+            <div class="item">
+              <div class="title">Event Location</div>
+              <p><?php echo nl2br(esc_html($contact_address)); ?></p>
+            </div>
+          <?php endif; ?>
+
+          <?php if ($contact_email): ?>
+            <div class="item">
+              <div class="title">Email</div>
+              <p><a href="mailto:<?php echo esc_attr($contact_email); ?>"><?php echo esc_html($contact_email); ?></a></p>
+            </div>
+          <?php endif; ?>
+
+          <?php if (!empty($social_links)): ?>
+            <div class="item">
+              <div class="title">Follow Us</div>
+              <div class="socials">
+                <?php foreach ($social_links as $social): ?>
+                  <?php
+                  $url = $social['url']; // Text
+                  $icon_svg = $social['icon']; // SVG as WYSIWYG
+                  ?>
+                  <?php if ($url && $icon_svg): ?>
+                    <a href="<?php echo esc_url($url); ?>" target="_blank" rel="noopener">
+                      <?php echo $icon_svg; ?>
+                    </a>
+                  <?php endif; ?>
+                <?php endforeach; ?>
               </div>
             </div>
-          </div>
-          <div class="form">
+          <?php endif; ?>
+        </div>
+      </div>
 
-            <div class="form-wrapper">
-              <div class="title">
-                get in touch
-              </div>
-              <p>Speak directly with our Sydney-based team—no ticket queues, just solutions.</p>
+      <div class="form">
+        <div class="form-wrapper">
+          <?php if ($form_title): ?>
+            <div class="title"><?php echo esc_html($form_title); ?></div>
+          <?php endif; ?>
 
-              <div class="actual-form">
+          <?php if ($form_description): ?>
+            <p><?php echo esc_html($form_description); ?></p>
+          <?php endif; ?>
+
+          <?php if ($form_shortcode): ?>
+            <div class="actual-form">
+              <?php echo do_shortcode($form_shortcode); ?>
+                            <!-- <div class="actual-form">
                 <div class="form-group">
                   <input type="text" class="form-control" placeholder="Name">
                 </div>
@@ -69,14 +107,19 @@
                   <textarea class="form-control" placeholder="Message"></textarea>
                 </div>
                 <button type="submit" class="btn btn-solid round mt-4">Send message</button>
-              </div>
+              </div> -->
             </div>
-
-          </div>
-        </div>
-
-        <div class="map-section">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.9808879880156!2d151.20585471171057!3d-33.86438341871934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ae419420dc2b%3A0x6b86765800891cd4!2s20%20Bond%20St%2C%20Sydney%20NSW%202000%2C%20Australia!5e0!3m2!1sen!2sph!4v1745937632912!5m2!1sen!2sph" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <?php endif; ?>
         </div>
       </div>
-    </section>
+    </div>
+
+    <?php if ($map_embed): ?>
+      <div class="map-section">
+        <?php echo $map_embed; ?>
+      </div>
+    <?php endif; ?>
+  </div>
+</section>
+
+    

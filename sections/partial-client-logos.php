@@ -1,9 +1,10 @@
 <?php
 // Load all fields first
-$section_index = $args['section_index'] ?? 0;
-$section_title     = get_sub_field('section_title');
-$highlighted_words = get_sub_field('highlighted_words');
-$logos             = get_sub_field('logos');
+$section_index       = $args['section_index'] ?? 0;
+$section_id          = get_sub_field('id'); // Text
+$section_title       = get_sub_field('section_title'); // Text
+$highlighted_words   = get_sub_field('highlighted_words'); // Text
+$logos               = get_sub_field('logos'); // Repeater
 
 // Do not render the section if there's nothing to show
 if (empty($section_title) && empty($highlighted_words) && empty($logos)) {
@@ -11,7 +12,7 @@ if (empty($section_title) && empty($highlighted_words) && empty($logos)) {
 }
 ?>
 
-<section class="client-logos brand-background" id="section-<?php echo esc_attr($section_index); ?>">
+<section class="client-logos brand-background section-<?php echo esc_attr($section_index); ?>" <?php if ($section_id): ?>id="<?php echo esc_attr($section_id); ?>"<?php endif; ?>>
   <div class="container">
 
     <?php if ($section_title || $highlighted_words): ?>
@@ -35,7 +36,7 @@ if (empty($section_title) && empty($highlighted_words) && empty($logos)) {
           ?>
           <?php if (!empty($logo_image)): ?>
             <div class="item">
-              <img class="img-fluid" src="<?php echo esc_url($logo_image); ?>" alt="Client Logo">
+              <?php echo wp_get_attachment_image($logo_image, 'full', false, ['class' => 'img-fluid', 'alt' => 'Client Logo']); ?>
             </div>
           <?php endif; ?>
         <?php endforeach; ?>

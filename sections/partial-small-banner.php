@@ -1,23 +1,48 @@
-    <section class="small-banner">
-      <div class="bg brand-background"></div>
+<?php
+$section_id = get_sub_field('id'); // Text
+$section_index = $args['section_index'] ?? 0;
+$ticker = get_sub_field('ticker'); // Text
+$title = get_sub_field('title'); // Text or WYSIWYG
+$button = get_sub_field('button'); // Link (array: title, url, target)
+$image = get_sub_field('image'); // Image (ID)
+$floating_image = get_sub_field('floating_image'); // Image (ID)
 
-      <div class="outer-container">
+// Return early if nothing to show
+if (empty($ticker) && empty($title) && empty($button) && empty($image) && empty($floating_image)) return;
+?>
 
-        <div class="container">
+<section class="small-banner section-<?php echo esc_attr($section_index); ?>" <?php if ($section_id): ?>id="<?php echo esc_attr($section_id); ?>"<?php endif; ?>>
+  <div class="bg brand-background"></div>
 
-        <div class="content-wrapper">
-          <div class="content">
-            <div class="ticker">What is Website Maintenance and why does my business need it</div>
-            <h2>Have a <span>secure, up-to-date</span> and <span>optimised website</span></h2>
-            <a href="#" class="btn btn-solid">SEE OUR PLATFORMS</a>
-          </div>
+  <div class="outer-container">
+    <div class="container">
+      <div class="content-wrapper">
+        <div class="content">
+          <?php if ($ticker): ?>
+            <div class="ticker"><?php echo esc_html($ticker); ?></div>
+          <?php endif; ?>
+
+          <?php if ($title): ?>
+            <h2><?php echo wp_kses_post($title); ?></h2>
+          <?php endif; ?>
+
+          <?php if ($button): ?>
+            <a href="<?php echo esc_url($button['url']); ?>" class="btn btn-solid" <?php if (!empty($button['target'])): ?>target="<?php echo esc_attr($button['target']); ?>"<?php endif; ?>>
+              <?php echo esc_html($button['title']); ?>
+            </a>
+          <?php endif; ?>
+        </div>
+
+        <?php if ($image): ?>
           <div class="image">
-            <img class="img-fluid" src="./assets/images/image1.png">
+            <?php echo wp_get_attachment_image($image, 'full', false, ['class' => 'img-fluid']); ?>
           </div>
-        </div>
-
-        </div>
-        <img src="./assets/images/floating-small-banner.png" class="floating-small-banner">
+        <?php endif; ?>
       </div>
+    </div>
 
-    </section>
+    <?php if ($floating_image): ?>
+      <?php echo wp_get_attachment_image($floating_image, 'full', false, ['class' => 'floating-small-banner']); ?>
+    <?php endif; ?>
+  </div>
+</section>

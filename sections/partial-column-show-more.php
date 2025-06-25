@@ -2,6 +2,7 @@
 // Ensure this file is not accessed directly
 if (!defined('ABSPATH')) exit;
 $section_index = $args['section_index'] ?? 0;
+$id = get_sub_field('id');
 $ticker = get_sub_field('ticker');
 $title = get_sub_field('title');
 $content = get_sub_field('content');
@@ -22,7 +23,7 @@ if (
 }
 ?>
 
-<section id="section-<?php echo esc_attr($section_index); ?>" class="column-show-more">  
+<section id="<?php echo esc_attr($id); ?>" class="column-show-more section-<?php echo esc_attr($section_index); ?>">  
   <div class="container">
     <?php if (!empty($ticker) || !empty($title)): ?>  
       <div class="text-center pb-5">
