@@ -93,15 +93,20 @@ function maintain_enqueue_scripts_manual() {
 add_action('wp_enqueue_scripts', 'maintain_enqueue_scripts_manual');
 
 
-register_nav_menus([
-  'primary' => __('Primary Menu', 'yourtheme')
-]);
+
+
+add_theme_support('post-thumbnails');
 
 
 
 
+function custom_excerpt_chars($text, $max = 100) {
+  $text = wp_strip_all_tags($text);
+  return mb_strlen($text) > $max ? mb_substr($text, 0, $max) . '...' : $text;
+}
 
-
+register_nav_menu('primary_menu', __('Primary Menu'));
+require get_template_directory() . '/includes/class-custom-walker-nav.php';
 
 
 

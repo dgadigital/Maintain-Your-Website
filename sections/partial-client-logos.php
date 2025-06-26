@@ -33,6 +33,7 @@ if (empty($section_title) && empty($highlighted_words) && empty($logos)) {
             ?>
               <div class="item">
                 <img src="<?php echo esc_url($logo_url); ?>" class="img-fluid" alt="Client Logo">
+                
               </div>
             <?php endif; ?>
           <?php endforeach; ?>

@@ -56,7 +56,7 @@
 
       <div class="right-wrapper">
         <div class="navbar-collapse">
-          <ul class="navbar-nav ml-auto">
+          <!-- <ul class="navbar-nav ml-auto">
             <li class="nav-item">
               <a class="nav-link" href="#">About us</a>
             </li>
@@ -108,7 +108,17 @@
                 <a class="dropdown-item" href="#">Magento</a>
               </div>
             </li>
-          </ul>
+          </ul> -->
+          <?php
+            wp_nav_menu([
+              'theme_location' => 'primary_menu',
+              'container'      => false,
+              'menu_class'     => 'navbar-nav ml-auto',
+              'fallback_cb'    => false,
+              'walker'         => new Custom_Walker_Nav(),
+            ]);
+          ?>
+
         </div>
         <div class="hamburger-wrapper">
           <a href="" class="btn btn-solid ml-3">Contact Us</a>

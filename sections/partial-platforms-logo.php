@@ -26,7 +26,7 @@ if (empty($ticker) && empty($title) && empty($platform_logos)) return;
         <div class="platforms">
           <?php foreach ($platform_logos as $logo): ?>
             <div class="item">
-              <?php echo wp_get_attachment_image($logo['image'], 'full', false, ['class' => 'img-fluid']); ?>
+              <img src="<?php echo $logo['image']['url']; ?>" alt="" class="img-fluid">
             </div>
           <?php endforeach; ?>
         </div>

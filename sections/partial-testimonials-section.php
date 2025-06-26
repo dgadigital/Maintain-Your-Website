@@ -1,77 +1,75 @@
-    <section class="testimonials-section">
-      <div class="container">
-        <div class="text-center pb-5">
-          <h2><span>Testimonials</span></h2>
-        </div>
+<?php
+if (!defined('ABSPATH')) exit;
 
-        <div class="testimonials-wrapper">
+// Section index
+$section_index = $args['section_index'] ?? 0;
 
-          <div class="item">
-            <div class="info">
-              <div class="info-wrapper">
-                <div class="name">John Smith</div>
-                <div class="position">Marketing Director</div>
-                <div class="company"><i>XYZ Corp</i></div>
-              </div>
-              <span class="number">01</span>
-            </div>
-            <div class="details">
-              <p class="testimonial-text">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et</p>
-              <a href="#" class="readmore-testimonials">READ MORE</a>
-            </div>
-          </div>
-          <div class="item">
-            <div class="info">
-              <div class="info-wrapper">
-                <div class="name">John Smith</div>
-                <div class="position">Marketing Director</div>
-                <div class="company"><i>XYZ Corp</i></div>
-              </div>
-              <span class="number">02</span>
-            </div>
-            <div class="details">
-              <p class="testimonial-text">“Vince & the team at Digital Growth have provided ongoing support, build & functionality with our website clinimed.com.au. The team is prompt in updating our requirements, always with a professional approach, with an ongoing open platform of communication regarding integration & growth, that keeps our digital & dynamic online presence running smoothly on all devices & browsers.</p>
-              <a href="#" class="readmore-testimonials">READ MORE</a>
-            </div>
-          </div>
+// ACF Fields
+$section_id = get_sub_field('id'); // Text
+$ticker     = get_sub_field('ticker'); // Text
+$section_title     = get_sub_field('section_title'); // Text
 
-          <div class="item reverse">
-            <div class="info">
-              <div class="info-wrapper">
-                <div class="name">John Smith</div>
-                <div class="position">Marketing Director</div>
-                <div class="company"><i>XYZ Corp</i></div>
-              </div>
-              <span class="number">03</span>
-            </div>
-            <div class="details">
-              <p class="testimonial-text">“Vince & the team at Digital Growth have provided ongoing support, build & functionality with our website clinimed.com.au. The team is prompt in updating our requirements, always with a professional approach, with an ongoing open platform of communication regarding integration & growth, that keeps our digital & dynamic online presence running smoothly on all devices & browsers.</p>
-              <a href="#" class="readmore-testimonials">READ MORE</a>
-            </div>
-          </div>
+// Get testimonials (limit to 4)
+$testimonials = get_posts([
+    'post_type'      => 'testimonial',
+    'posts_per_page' => 4,
+    'post_status'    => 'publish',
+]);
 
-          <div class="item reverse">
-            <div class="info">
-              <div class="info-wrapper">
-                <div class="name">John Smith</div>
-                <div class="position">Marketing Director</div>
-                <div class="company"><i>XYZ Corp</i></div>
-              </div>
-              <span class="number">04</span>
-            </div>
-            <div class="details">
-              <p class="testimonial-text">“We developed a great partnership with Digital Growth Agency, and their dedication to our business is evident in all aspects of our digital marketing and websites. We appreciate their fast turn-around time, transparency and open communication when working end-to-end on web and design projects together."</p>
-              <a href="#" class="readmore-testimonials">READ MORE</a>
-            </div>
-          </div>
+// Early return if nothing to show
 
+?>
 
-        </div>
+<section class="testimonials-section section-<?php echo esc_attr($section_index); ?>" <?php if ($section_id): ?>id="<?php echo esc_attr($section_id); ?>"<?php endif; ?>>
+  <div class="container">
 
-        <div class="text-center pt-5 mt-3">
-          <a href="#" class="btn btn-solid">SEE MORE</a>
-        </div>
-
-
+    <?php if ($section_title): ?>
+      <div class="text-center pb-5">
+        <div class="ticker"><?php echo esc_html($ticker); ?></div>
+        <h2><?php echo ($section_title); ?></h2>
       </div>
-    </section>
+    <?php endif; ?>
+
+    <?php if (!empty($testimonials)): ?>
+      <div class="testimonials-wrapper">
+        <?php foreach ($testimonials as $index => $post): 
+          setup_postdata($post);
+
+          $name     = get_the_title($post);
+          $content  = get_the_content(null, false, $post);
+          $position = get_field('position', $post->ID);
+          $company  = get_field('company', $post->ID);
+          $number   = str_pad($index + 1, 2, '0', STR_PAD_LEFT);
+          $reverse  = ($index % 2 !== 0) ? ' reverse' : '';
+        ?>
+        <div class="item<?php echo esc_attr($reverse); ?>">
+          <div class="info">
+            <div class="info-wrapper">
+              <?php if ($name): ?>
+                <div class="name"><?php echo esc_html($name); ?></div>
+              <?php endif; ?>
+              <?php if ($position): ?>
+                <div class="position"><?php echo esc_html($position); ?></div>
+              <?php endif; ?>
+              <?php if ($company): ?>
+                <div class="company"><i><?php echo esc_html($company); ?></i></div>
+              <?php endif; ?>
+            </div>
+            <span class="number"><?php echo esc_html($number); ?></span>
+          </div>
+          <div class="details">
+            <div class="testimonial-text shorten"><p><?php echo wp_kses_post($content); ?></p></div>
+
+            <a href="/testimonials" class="readmore-testimonials">READ MORE</a>
+          </div>
+        </div>
+        <?php endforeach; wp_reset_postdata(); ?>
+      </div>
+    <?php endif; ?>
+
+    <div class="text-center pt-5 mt-3">
+      <a href="/testimonials" class="btn btn-solid">SEE MORE</a>
+    </div>
+
+  </div>
+</section>

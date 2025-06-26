@@ -48,7 +48,7 @@ if (
           <?php if ($contact_address): ?>
             <div class="item">
               <div class="title">Event Location</div>
-              <?php echo nl2br(esc_html($contact_address)); ?>
+              <?php echo nl2br(($contact_address)); ?>
             </div>
           <?php endif; ?>
 
@@ -87,13 +87,13 @@ if (
           <?php endif; ?>
 
           <?php if ($form_description): ?>
-            <p><?php echo esc_html($form_description); ?></p>
+            <?php echo ($form_description); ?>
           <?php endif; ?>
 
           <?php if ($form_shortcode): ?>
             <div class="actual-form">
               <?php echo do_shortcode($form_shortcode); ?>
-                            <!-- <div class="actual-form">
+                            <!-- 
                 <div class="form-group">
                   <input type="text" class="form-control" placeholder="Name">
                 </div>
@@ -107,7 +107,7 @@ if (
                   <textarea class="form-control" placeholder="Message"></textarea>
                 </div>
                 <button type="submit" class="btn btn-solid round mt-4">Send message</button>
-              </div> -->
+               -->
             </div>
           <?php endif; ?>
         </div>

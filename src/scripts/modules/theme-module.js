@@ -7,25 +7,25 @@ AppName.Modules.ThemeModule = (function () {
   // Private Methods //
   ////////////////////
   const _privateMethod = () => {
-    $('.testimonial-text').each(function() {
+    $('.shorten').each(function() {
       const originalText = $(this).text();
       const truncatedText = originalText.split(' ').slice(0, 16).join(' ') + '...'; 
   
       $(this).text(truncatedText);
   
-      const readMoreLink = $(this).next('.readmore-testimonials'); 
+      // const readMoreLink = $(this).next('.readmore-testimonials'); 
   
-      readMoreLink.on('click', function(e) {
-        e.preventDefault();
+      // readMoreLink.on('click', function(e) {
+      //   e.preventDefault();
   
-        if ($(this).prev('.testimonial-text').text() === truncatedText) {
-          $(this).prev('.testimonial-text').text(originalText);
-          $(this).text('READ LESS');
-        } else {
-          $(this).prev('.testimonial-text').text(truncatedText);
-          $(this).text('READ MORE');
-        }
-      });
+        // if ($(this).prev('.testimonial-text').text() === truncatedText) {
+        //   $(this).prev('.testimonial-text').text(originalText);
+        //   $(this).text('READ LESS');
+        // } else {
+          $(this).prev('.shorten p').text(truncatedText);
+          // $(this).text('READ MORE');
+        // }
+      // });
     });
   };
 
