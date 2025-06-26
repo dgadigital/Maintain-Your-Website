@@ -35,14 +35,15 @@ if (empty($ticker) && empty($title) && empty($button) && empty($image) && empty(
 
         <?php if ($image): ?>
           <div class="image">
-            <?php echo wp_get_attachment_image($image, 'full', false, ['class' => 'img-fluid']); ?>
+                  <?php echo wp_get_attachment_image($image['ID'], 'full', false, ['class' => 'img-fluid']); ?>
           </div>
         <?php endif; ?>
       </div>
     </div>
 
     <?php if ($floating_image): ?>
-      <?php echo wp_get_attachment_image($floating_image, 'full', false, ['class' => 'floating-small-banner']); ?>
+      <img src="<?php echo $floating_image['url'] ?>" alt="" class = "floating-small-banner">
+      
     <?php endif; ?>
   </div>
 </section>

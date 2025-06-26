@@ -73,7 +73,7 @@ if (empty($ceo_image) && empty($ceo_paragraphs) && empty($team_members)) return;
           <?php foreach ($team_members as $member): ?>
             <?php
               $image     = $member['image'] ?? ''; // Image ID
-              $text      = $member['description'] ?? ''; // Text
+              $text      = $member['description'] ?? ''; // wysiwyg
               $name      = $member['name'] ?? ''; // Text
               $position  = $member['position'] ?? ''; // Text
             ?>

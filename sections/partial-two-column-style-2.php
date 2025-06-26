@@ -24,7 +24,7 @@ if (empty($image) && empty($ticker) && empty($title) && empty($content) && empty
     <div class="content-wrapper">
       <?php if ($image): ?>
         <div class="item left-content">
-          <?php echo wp_get_attachment_image($image, 'full', false, ['class' => 'img-fluid']); ?>
+          <?php echo wp_get_attachment_image($image['ID'], 'full', false, ['class' => 'img-fluid']); ?>
         </div>
       <?php endif; ?>
 

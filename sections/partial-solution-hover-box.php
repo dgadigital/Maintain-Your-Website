@@ -41,7 +41,7 @@ if (empty($ticker) && empty($title) && empty($boxes)) {
           <div class="item box-style">
             <?php if ($image): ?>
               <div class="image">
-                <?php echo wp_get_attachment_image($image, 'full', false, ['class' => 'absolute-image']); ?>
+                <?php echo wp_get_attachment_image($image['ID'], 'full', false, ['class' => 'absolute-image']); ?>
               </div>
             <?php endif; ?>
 

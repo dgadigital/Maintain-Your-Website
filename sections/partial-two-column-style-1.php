@@ -32,7 +32,7 @@ if (empty($ticker) && empty($title) && empty($image) && empty($boxes)) {
 
         <?php if ($image): ?>
           <br>
-          <?php echo wp_get_attachment_image($image, 'full', false, ['class' => 'img-fluid']); ?>
+          <?php echo wp_get_attachment_image($image['ID'], 'full', false, ['class' => 'img-fluid']); ?>
         <?php endif; ?>
       </div>
 
@@ -41,16 +41,19 @@ if (empty($ticker) && empty($title) && empty($image) && empty($boxes)) {
           <?php foreach ($boxes as $box): ?>
             <?php
               $heading = $box['heading'] ?? ''; // Text
-              $text    = $box['text'] ?? ''; // Textarea or WYSIWYG
+              $text    = $box['Text'] ?? ''; // Textarea or WYSIWYG
               $button  = $box['button'] ?? ''; // Link
             ?>
+
+
+
             <div class="inside-box">
               <?php if ($heading): ?>
                 <h3><?php echo esc_html($heading); ?></h3>
               <?php endif; ?>
 
               <?php if ($text): ?>
-                <p><?php echo wp_kses_post($text); ?></p>
+                <p><?php echo ($text); ?></p>
               <?php endif; ?>
 
               <?php if (!empty($button)): ?>

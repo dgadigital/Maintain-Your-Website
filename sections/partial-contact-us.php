@@ -48,7 +48,7 @@ if (
           <?php if ($contact_address): ?>
             <div class="item">
               <div class="title">Event Location</div>
-              <p><?php echo nl2br(esc_html($contact_address)); ?></p>
+              <?php echo nl2br(esc_html($contact_address)); ?>
             </div>
           <?php endif; ?>
 

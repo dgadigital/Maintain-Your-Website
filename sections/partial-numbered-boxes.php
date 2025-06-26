@@ -27,7 +27,7 @@ if (empty($ticker) && empty($title) && empty($boxes)) return;
         <?php foreach ($boxes as $box):
           $number = $box['number']; // Text or Number
           $box_title = $box['title']; // Text
-          $description = $box['description']; // Text
+          $description = $box['description']; // wysiwyg
           ?>
           <div class="item box-style">
             <?php if ($number): ?><div class="number"><?php echo esc_html($number); ?></div><?php endif; ?>
