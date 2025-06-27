@@ -2,17 +2,18 @@
 if (!defined('ABSPATH')) exit;
 
 
-$id = get_sub_field('id'); // Text
-$title = get_sub_field('title'); // Text
-$subtitle = get_sub_field('subtitle'); // Text
-$contact_phone = get_sub_field('contact_phone'); // Text
-$contact_email = get_sub_field('contact_email'); // Text
-$contact_address = get_sub_field('contact_address'); // Textarea
-$social_links = get_sub_field('social_links'); // Repeater
-$form_title = get_sub_field('form_title'); // Text
-$form_description = get_sub_field('form_description'); // WYSIWYG
-$form_shortcode = get_sub_field('form_shortcode'); // Text
-$map_embed = get_sub_field('map_embed'); // WYSIWYG
+$id = get_field('id'); // Text (optional: only if you need a global section ID)
+$title = get_field('title', 'option'); // Text
+$subtitle = get_field('subtitle', 'option'); // Text
+$contact_phone = get_field('contact_phone', 'option'); // Text
+$contact_email = get_field('contact_email', 'option'); // Text
+$contact_address = get_field('contact_address', 'option'); // Textarea
+$social_links = get_field('social_links', 'option'); // Repeater
+$form_title = get_field('form_title', 'option'); // Text
+$form_description = get_field('form_description', 'option'); // WYSIWYG
+$form_shortcode = get_field('form_shortcode', 'option'); // Text
+$map_embed = get_field('map_embed', 'option'); // WYSIWYG
+
 
 if (
   empty($title) &&

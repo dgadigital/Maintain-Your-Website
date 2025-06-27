@@ -96,6 +96,12 @@ add_action('wp_enqueue_scripts', 'maintain_enqueue_scripts_manual');
 
 
 add_theme_support('post-thumbnails');
+add_theme_support('custom-logo', [
+  'height'      => 100,
+  'width'       => 400,
+  'flex-height' => true,
+  'flex-width'  => true,
+]);
 
 
 
@@ -112,7 +118,32 @@ require get_template_directory() . '/includes/class-custom-walker-nav.php';
 
 
 
+register_nav_menus([
+  'footer_menu_1' => 'Footer Menu 1',
+  'footer_menu_2' => 'Footer Solutions Submenu',
+  'footer_menu_3' => 'Footer Platform Submenu',
+]);
 
+class Walker_Nav_Flat extends Walker_Nav_Menu {
+  function start_lvl(&$output, $depth = 0, $args = []) {
+    // No submenus
+  }
+
+  function end_lvl(&$output, $depth = 0, $args = []) {
+    // No submenus
+  }
+
+  function start_el(&$output, $item, $depth = 0, $args = [], $id = 0) {
+    $classes = !empty($item->classes) ? implode(' ', array_filter($item->classes)) : '';
+    $title = apply_filters('the_title', $item->title, $item->ID);
+    $url = $item->url;
+    $output .= '<a href="' . esc_url($url) . '" class="' . esc_attr($classes) . '">' . esc_html($title) . '</a>';
+  }
+
+  function end_el(&$output, $item, $depth = 0, $args = []) {
+    // No closing tags needed
+  }
+}
 
 
 

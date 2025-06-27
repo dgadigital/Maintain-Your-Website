@@ -121,7 +121,7 @@
 
         </div>
         <div class="hamburger-wrapper">
-          <a href="" class="btn btn-solid ml-3">Contact Us</a>
+          <a href="/contact-us/" class="btn btn-solid ml-3">Contact Us</a>
           <!-- <button class="navbar-toggler custom-toggler" type="button">
             <span class="navbar-toggler-icon"></span>
           </button> -->

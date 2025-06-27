@@ -1,4 +1,140 @@
-  </main>
+    </main>
+  <footer>
+    <div class="container">
+      <div class="footer-wrapper">
+
+        <?php
+        // Get global ACF options
+        $footer_logo = get_field('footer_logo', 'option'); // Image ID
+        $address = get_field('contact_address', 'option');
+        $phone = get_field('contact_phone', 'option');
+        $email = get_field('contact_email', 'option');
+        $social_links = get_field('social_links', 'option'); // Repeater
+        ?>
+
+        <div class="footer-details">
+          <?php
+            $custom_logo_id = get_theme_mod('custom_logo');
+            if ($custom_logo_id) {
+              echo wp_get_attachment_image($custom_logo_id, 'full', false, ['class' => 'img-fluid']);
+            }
+          ?>
+
+
+          <div class="details">
+            <?php if ($address): ?>
+              <div class="item">
+                <!-- Address SVG here -->
+                <?php echo esc_html($address); ?>
+              </div>
+            <?php endif; ?>
+
+            <?php if ($phone): ?>
+              <div class="item">
+                <!-- Phone SVG here -->
+                <a href="tel:<?php echo esc_attr($phone); ?>"><?php echo esc_html($phone); ?></a>
+              </div>
+            <?php endif; ?>
+
+            <?php if ($email): ?>
+              <div class="item">
+                <!-- Email SVG here -->
+                <a href="mailto:<?php echo esc_attr($email); ?>"><?php echo esc_html($email); ?></a>
+              </div>
+            <?php endif; ?>
+          </div>
+
+          <?php if ($social_links): ?>
+            <div class="footer-socials">
+              <?php foreach ($social_links as $social): ?>
+                <?php if (!empty($social['url']) && !empty($social['icon'])): ?>
+                  <a href="<?php echo esc_url($social['url']); ?>" target="_blank" rel="noopener">
+                    <?php echo $social['icon']; ?>
+                  </a>
+                <?php endif; ?>
+              <?php endforeach; ?>
+            </div>
+          <?php endif; ?>
+        </div>
+
+        <div class="footer-menu">
+          <div class="menu-row">
+            <div class="item menu-1">
+              <?php
+              wp_nav_menu([
+                'theme_location' => 'footer_menu_1',
+                'container'      => false,
+                'items_wrap'     => '%3$s', // Removes <ul>
+                'link_before'    => '',
+                'link_after'     => '',
+                'fallback_cb'    => false,
+                'depth'          => 1,
+                'walker'         => new Walker_Nav_Flat(),
+              ]);
+              ?>
+            </div>
+
+            <div class="item menu-2">
+              <div class="dropdown-title">
+                <a href="/">Solutions</a>
+                <!-- SVG caret -->
+              </div>
+              <div class="subs">
+                <?php
+                wp_nav_menu([
+                  'theme_location' => 'footer_menu_2',
+                'container'      => false,
+                'items_wrap'     => '%3$s', // Removes <ul>
+                'link_before'    => '',
+                'link_after'     => '',
+                'fallback_cb'    => false,
+                'depth'          => 1,
+                'walker'         => new Walker_Nav_Flat(),
+                ]);
+                ?>
+              </div>
+            </div>
+
+            <div class="item menu-3">
+              <div class="dropdown-title">
+                <a href="/">Platform</a>
+                <!-- SVG caret -->
+              </div>
+              <div class="subs">
+                <?php
+                wp_nav_menu([
+                  'theme_location' => 'footer_menu_3',
+                'container'      => false,
+                'items_wrap'     => '%3$s', // Removes <ul>
+                'link_before'    => '',
+                'link_after'     => '',
+                'fallback_cb'    => false,
+                'depth'          => 1,
+                'walker'         => new Walker_Nav_Flat(),
+                ]);
+                ?>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-search">
+          <div class="input-search-wrapper">
+            <input type="text" placeholder="Search" class="form-control input-search">
+          </div>
+          <a href="/contact" class="btn btn-solid">Contact</a>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <?php wp_footer(); ?>
+</body>
+</html>
+
+  
+  <!-- </main>
   <footer>
     <div class="container">
       <div class="footer-wrapper">
@@ -99,7 +235,7 @@
     </div>
   </footer>
 
-  <!-- build:js scripts/main.min.js -->
+build:js scripts/main.min.js -->
   <!-- <script src="./scripts/vendors/jquery.min.js"></script>
   <script src="./scripts/vendors/popper.min.js"></script>
   <script src="./scripts/vendors/bootstrap.min.js"></script>
@@ -108,12 +244,12 @@
   <script src="./scripts/core/base.js"></script>
   <script src="./scripts/modules/theme-module.js"></script>
   <script src="./scripts/bootstrapper.js"></script> -->
-  <?php wp_footer(); ?>
+  
   <!-- endbuild -->
 
   <!--[if lte IE 9]>
     <script src="javascripts/non-responsive.js"></script>
-  <![endif]-->
+  <![endif]
 </body>
 
-</html>
+</html> -->
