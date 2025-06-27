@@ -25,7 +25,7 @@
             <?php if ($address): ?>
               <div class="item">
                 <!-- Address SVG here -->
-                <?php echo esc_html($address); ?>
+                <?php echo ($address); ?>
               </div>
             <?php endif; ?>
 

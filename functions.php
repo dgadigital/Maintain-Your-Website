@@ -145,7 +145,15 @@ class Walker_Nav_Flat extends Walker_Nav_Menu {
   }
 }
 
+add_action('init', function () {
+  global $wp_post_types;
 
+  if (isset($wp_post_types['testimonials'])) {
+    $wp_post_types['testimonials']->rewrite['with_front'] = true;
+    $wp_post_types['testimonials']->rewrite['slug'] = 'testimonials';
+    $wp_post_types['testimonials']->has_archive = true;
+  }
+});
 
 
 

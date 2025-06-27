@@ -28,6 +28,17 @@
         border-radius: 50px;
         font-family: $font-Montserrat-Regular;
     }
+
+    &.testimonial-page{
+    padding: 10px 17px;
+    background-color: #ffffff;
+    color: $brand-green;
+    border: 1px solid $brand-green;
+        &.active {
+            background-color: $brand-green;
+            color: #fff;
+        }
+    }
 }
 
 .link-arrow {

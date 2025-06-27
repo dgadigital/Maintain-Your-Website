@@ -11,7 +11,7 @@ $section_title     = get_sub_field('section_title'); // Text
 
 // Get testimonials (limit to 4)
 $testimonials = get_posts([
-    'post_type'      => 'testimonial',
+    'post_type'      => 'testimonials',
     'posts_per_page' => 4,
     'post_status'    => 'publish',
 ]);
