@@ -18,10 +18,19 @@ h1 {
 
   span {
     font-family: $font-Montserrat-Bold;
+    color: $brand-color;
 
     &.brand-color {
       color: $brand-color;
     }
+  }
+
+  @media (max-width: 1450px) {
+    font-size: 40px;
+  }
+
+  @media (max-width: 1299px) {
+    font-size: 32px !important;
   }
 }
 

@@ -143,6 +143,7 @@ AppName.Modules.ThemeModule = (function () {
     });
   };
 
+  
   var _showmoreBlur = function () {
     $('.showmore').each(function() {
       $(this).click(function(e) {
@@ -156,6 +157,40 @@ AppName.Modules.ThemeModule = (function () {
         }
 
       });
+    });
+
+
+    $('.platform-toggle').on('click', function () {
+      const $this = $(this);
+      const isOpen = $this.hasClass('open');
+
+      $('.platform-toggle').removeClass('open').attr('aria-expanded', 'false');
+      $('.platform-content-wrap').css('display', 'none');
+
+      if (!isOpen) {
+        $this.addClass('open').attr('aria-expanded', 'true');
+        $this.next('.platform-content-wrap').css('display', 'block');
+      }
+    });
+
+
+    $('.solution-hover-box .as-tabs .title[data-tab]').on('click', function(e) {
+      e.preventDefault();
+
+      const tab = $(this).data('tab');
+      const $wrapper = $(this).closest('.solution-hover-box');
+
+      // Toggle active state for title buttons
+      $wrapper.find('.title[data-tab]').removeClass('active');
+      $(this).addClass('active');
+
+      // Toggle fullwidth-desc blocks
+      $wrapper.find('.fullwidth-desc').removeClass('active');
+      $wrapper.find('.fullwidth-desc[data-desc="' + tab + '"]').addClass('active');
+
+      // Toggle info-box blocks
+      $wrapper.find('.info-box').removeClass('active');
+      $wrapper.find('.info-box[data-info="' + tab + '"]').addClass('active');
     });
   }
 

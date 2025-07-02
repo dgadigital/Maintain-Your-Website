@@ -1,0 +1,69 @@
+.accordion-platforms {
+  background-color: #DCE3F6;
+  
+  .platform-wrap {
+
+    .platform-item {
+      margin-bottom: 25px;
+
+      
+      .platform-toggle {
+          padding: 20px;
+          text-align: center;
+          font-family: $font-Montserrat-Medium;
+          font-size: 30px;
+          color: $brand-green;
+          cursor: pointer;
+
+          &.open,
+          &:hover {
+            background-color: $brand-green;
+            color: #fff;
+
+
+            span {
+              &:after {
+                filter: brightness(0) invert(1);
+                transform: rotate(180deg);
+              }
+            }
+          }
+
+          span {
+            position: relative;
+
+            &:after {
+              content: '';
+              position: absolute;
+              right: -45px;
+              top: 0;
+              height: 35px;
+              width: 35px;
+              background-image: url('../assets/images/arrow-accordion.png');
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: cover;
+            }
+          }
+      }
+
+      .platform-content {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 50px;
+
+        p {
+          margin: 0;
+        }
+      }
+
+      .platform-content-wrap {
+        display: none;
+      }
+
+      .platform-toggle.open + .platform-content-wrap {
+        display: block;
+      }
+    }
+  }
+}
