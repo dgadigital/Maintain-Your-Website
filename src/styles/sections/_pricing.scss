@@ -1,0 +1,208 @@
+.pricing {
+
+    .toggle-switch-wrap {
+        text-align: center;
+        padding-bottom: 60px;
+    }
+
+    .toggle-switch {
+        display: inline-block;
+        position: relative;
+        width: 500px;
+        max-width: 100%;
+
+        input {
+            display: none;
+        }
+
+        .switch-label {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #fff;
+            border: 2px solid #16a34a;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+            height: 100%;
+            font-weight: 600;
+            font-size: 20px;
+            color: #16a34a;
+
+            @media (max-width: 991px) {
+                font-size: 15px;
+            }
+
+            .option {
+                flex: 1;
+                text-align: center;
+                z-index: 2;
+                padding: 10px 0;
+            }
+
+            .switch-slider {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 50%;
+                height: 100%;
+                background: #16a34a;
+                border-radius: 6px;
+                transition: left 0.3s ease;
+                z-index: 1;
+            }
+        }
+
+        input:checked + .switch-label .switch-slider {
+            left: 50%;
+        }
+
+        input:checked + .switch-label .option.once {
+            color: #16a34a;
+        }
+
+        input:checked + .switch-label .option.ongoing {
+            color: #fff;
+        }
+
+        input:not(:checked) + .switch-label .option.once {
+            color: #fff;
+        }
+
+        input:not(:checked) + .switch-label .option.ongoing {
+            color: #16a34a;
+        }
+    }
+
+
+    .pricing-box {
+
+        .btn-price {
+            width: 100%;
+        }
+
+        .price-ticker {
+            padding: 5px 10px;
+            font-family: $font-Montserrat-SemiBold;
+            text-transform: uppercase;
+            font-size: 12px;
+            background-color: #DCE3F6;
+            border-radius: 50px;
+        }
+
+        .black {
+            background-color: #262F34;
+
+            .btn-price,
+            .price-ticker {
+                color: #262F34;
+            }
+        }
+
+        .green {
+            background-color: #16A34A;
+
+            .btn-price,
+            .price-ticker {
+                color: #16A34A;
+            }
+        }
+
+        .blue {
+            background-color: #042BF8;
+
+            .btn-price,
+            .price-ticker {
+                color: #042BF8;
+            }
+        }
+
+        .pricing-box-wrapper {
+            display: none;
+            gap: 60px;
+
+            @media (max-width: 1199px) {
+                gap: 18px;
+            }
+
+            @media (max-width: 991px) {
+                gap: 0;
+                flex-wrap: wrap;
+            }
+
+            &.active {
+                display: flex;
+            }
+
+            .box {
+                padding: 35px 45px;
+                width: 33.333%;
+                color: #fff;
+
+                @media (max-width: 1199px) {
+                    padding: 25px 25px;
+                }
+
+                @media (max-width: 991px) {
+                    width: 100%;
+                    margin-bottom: 30px;
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            .box-head {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding-bottom: 20px;
+                border-bottom: 1px solid #F3F3F3;
+                margin-bottom: 15px;
+
+                .title {
+                    font-size: 20px;
+                    font-family: $font-Montserrat-Bold;
+                }
+            }
+
+            .price {
+                margin-bottom: 20px;
+                font-size: 40px;
+                font-family: $font-Montserrat-Bold;
+
+                span {
+                    font-size: 20px;
+                    font-family: $font-Montserrat-Regular;
+                }
+            }
+
+            ul {
+                list-style: none;
+                padding-left: 45px;
+                margin-bottom: 30px;
+
+                li {
+                    position: relative;
+                    margin-bottom: 20px;
+
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        left: -45px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        height: 26px;
+                        width: 26px;
+                        background-image: url(../assets/images/checklist.png);
+                        background-position: center;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                    }
+                }
+            }
+        }
+    }
+}

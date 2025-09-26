@@ -192,6 +192,17 @@ AppName.Modules.ThemeModule = (function () {
       $wrapper.find('.info-box').removeClass('active');
       $wrapper.find('.info-box[data-info="' + tab + '"]').addClass('active');
     });
+
+
+    $('#supportToggle').on('change', function() {
+       if ($(this).is(':checked')) {
+        $('.pricing-box-wrapper.once').removeClass('active');
+        $('.pricing-box-wrapper.ongoing').addClass('active');
+      } else {
+        $('.pricing-box-wrapper.ongoing').removeClass('active');
+        $('.pricing-box-wrapper.once').addClass('active');
+      }
+    });
   }
 
   /////////////////////

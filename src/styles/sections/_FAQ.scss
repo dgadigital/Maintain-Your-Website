@@ -1,0 +1,23 @@
+.FAQ {
+
+    .custom-tabs {
+        border-bottom: none;
+
+        .nav-link {
+            border: none;
+            border-bottom: 3px solid transparent;
+            color: #000;
+            font-weight: 400;
+            padding-bottom: 8px;
+
+            &:hover {
+                border-color: #ccc;
+            }
+            
+            &.active {
+                font-weight: 500;
+                border-bottom: 4px solid #0AAA42;
+            }
+        }
+    }
+}

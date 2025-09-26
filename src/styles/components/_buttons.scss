@@ -4,6 +4,9 @@
 // This file contains all styles related to the button component.
 // -----------------------------------------------------------------------------
 
+// .btn {
+//     white-space: pre-wrap;
+// }
 
 .btn-solid {
     padding: 10px 46px;
@@ -75,3 +78,13 @@
         width: 12px;
     }
 }
+
+.btn-price {
+    padding: 5px 20px;
+    background-color: #DCE3F6;
+    font-size: 20px;
+    font-family: $font-Montserrat-SemiBold;
+    text-transform: uppercase;
+    border-radius: 50px;
+}
+

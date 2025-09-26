@@ -15,6 +15,10 @@
           color: $brand-green;
           cursor: pointer;
 
+          @media (max-width: 991px) {
+            font-size: 20px;
+          } 
+
           &.open,
           &:hover {
             background-color: $brand-green;
