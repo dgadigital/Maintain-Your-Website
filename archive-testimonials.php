@@ -3,7 +3,7 @@
 <section class="testimonials-section">
   <div class="container">
     <div class="text-center pb-5">
-      <div class="ticker">test</div>
+      <div class="ticker">testasd</div>
       <h2><span>Testimonials</span></h2>
     </div>
 
@@ -12,12 +12,12 @@
         $paged = max(1, get_query_var('paged'));
         $query = new WP_Query([
           'post_type'      => 'testimonials',
-          'posts_per_page' => 4,
+          'posts_per_page' => 10,
           'paged'          => $paged,
         ]);
 
         if ($query->have_posts()) :
-          $i = 1 + (($paged - 1) * 4);
+          $i = 1 + (($paged - 1) * 10);
           while ($query->have_posts()) : $query->the_post();
 
             $title    = get_the_title(); // Used as "name"
@@ -58,12 +58,40 @@
           for ($page = 1; $page <= $total_pages; $page++) {
             $is_current = $page === $paged;
             $url = get_pagenum_link($page);
-            $class = 'btn btn-solid testimonial-page' . ($is_current ? ' active' : '');
+            $class = 'btn btn-solid testimonial-page mr-3' . ($is_current ? ' active' : '');
             echo '<a href="' . esc_url($url) . '" class="' . esc_attr($class) . '">' . $page . '</a>';
           }
         }
       ?>
     </div>
+	  
+	  <?php
+// 	  global $wp_query;
+// 	  $big = 999999999; // need an unlikely integer
+
+// 	  $pagination_links = paginate_links([
+// 		  'base'    => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
+// 		  'format'  => '/page/%#%/',
+// 		  'current' => max(1, get_query_var('paged')),
+// 		  'total'   => $wp_query->max_num_pages,
+// 		  'type'    => 'array',
+// 		  'prev_next' => false,
+// 	  ]);
+
+// 	  if ($pagination_links):
+// 	  echo '<div class="custom-pagination">';
+// 	  foreach ($pagination_links as $link) {
+// 		  // Add active class to current page
+// 		  if (strpos($link, 'current') !== false) {
+// 			  echo str_replace('page-numbers', 'page-numbers active', $link);
+// 		  } else {
+// 			  echo str_replace('page-numbers', 'page-numbers', $link);
+// 		  }
+// 	  }
+// 	  echo '</div>';
+// 	  endif;
+	  ?>
+
 
   </div>
 </section>

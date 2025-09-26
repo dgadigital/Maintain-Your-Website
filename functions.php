@@ -70,10 +70,6 @@ function maintain_enqueue_scripts_manual() {
         true
     );
 
-
-
-
-
     wp_enqueue_script(
         'non-responsive',
         $theme_uri . '/src/scripts/non-responsive.js',
@@ -115,9 +111,6 @@ register_nav_menu('primary_menu', __('Primary Menu'));
 require get_template_directory() . '/includes/class-custom-walker-nav.php';
 
 
-
-
-
 register_nav_menus([
   'footer_menu_1' => 'Footer Menu 1',
   'footer_menu_2' => 'Footer Solutions Submenu',
@@ -154,6 +147,26 @@ add_action('init', function () {
     $wp_post_types['testimonials']->has_archive = true;
   }
 });
+
+
+add_action('init', function () {
+  global $wp_post_types;
+
+  if (isset($wp_post_types['blogs'])) {
+    $wp_post_types['blogs']->rewrite['with_front'] = true;
+    $wp_post_types['blogs']->rewrite['slug'] = 'blogs';
+    $wp_post_types['blogs']->has_archive = true;
+  }
+});
+
+add_filter('wpcf7_autop_or_not', '__return_false');
+
+ /////////////////////////////////////////////////////////////////////////////////////
+ /////////////////////////////////////////////////////////////////////////////////////
+ ///////////////////////////////////////////////////////////////////////////////////////
+
+
+
 
 
 

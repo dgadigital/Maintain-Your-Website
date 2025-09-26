@@ -6,7 +6,7 @@ $section_index = $args['section_index'] ?? 0;
 
 // Custom query to fetch latest blog posts
 $articles = new WP_Query([
-  'post_type'      => 'post',
+  'post_type'      => 'blogs',
   'posts_per_page' => 6,
   'post_status'    => 'publish',
 ]);
@@ -54,7 +54,7 @@ if (!$articles->have_posts()) return;
     </div>
 
     <div class="text-center pt-5">
-      <a href="/blog" class="btn btn-solid">see other RESOURCES</a>
+      <a href="/blogs" class="btn btn-solid">see other RESOURCES</a>
     </div>
 
   </div>
